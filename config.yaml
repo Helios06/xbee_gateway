@@ -1,9 +1,9 @@
 name: "XBee Gateway"
-version: "0.0.7"
+version: "0.1.1"
 stage: stable
 slug: "xbee_gateway"
 description: "XBee Gateway for MQTT"
-codenotary: "helios14_75@hotmail.fr"
+codenotary: "philippemario.romano@hotmail.fr"
 url: "https://github.com/Helios06/xbee_gateway"
 arch:
   - aarch64
