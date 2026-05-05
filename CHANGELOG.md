@@ -1,5 +1,8 @@
 ## Changelog
 
+### 0.1.1
+- 2026 update according to 2026 core, supervisor and os
+
 ### 0.0.7
 - updating Docs.md and README.md
 - Logs handle date time

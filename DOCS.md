@@ -60,10 +60,10 @@ On your Home Assistant you must have configured 2 needed add-ons
 
 - Raspberry PI4B using
   - XBee Pro
-  - Core 2024.3.3
-  - Supervisor 2024.03.1
-  - Operating System 12.1
-  - Frontend 20240306.0
+  - Core 2026.4.4
+  - Supervisor 2026.04.2
+  - Operating System 17.2
+  - Frontend 20260325.8
 
 ### Contributors
 
@@ -72,7 +72,7 @@ On your Home Assistant you must have configured 2 needed add-ons
 
 ### MIT License
 
-Copyright (c) 2023-2024  Helios  helios14_75@hotmail.fr
+Copyright (c) 2023-2026 Helios  philippemario.romano@hotmail.fr
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

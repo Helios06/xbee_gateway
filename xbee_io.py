@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2023-2024  Helios  helios14_75@hotmail.fr
+Copyright (c) 2023-2026  Helios  philippemario.romano@hotmail.fr
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -128,24 +128,28 @@ class xbee_io:
         frame: bytes = b''
         while getattr(self.XBeeIoActivityThread, "isRunning", True):
             time.sleep(0.001)
-            if self.XBeeSerial.in_waiting >= 1:
-                # some data available
-                data: bytes = self.XBeeSerial.read(1)
-                # logging.debug(data)
-                frame += data
-                if 'OK\r' in frame.decode("ascii"):
-                    # received response
-                    self.XBeeIoOKReceived = True
-                    self.XBeeIoFrameReceived = frame
-                    logging.info(f'............... frame received: %s', frame)
-                    frame = b''
-                elif '\r' in frame.decode("ascii"):
-                    # received response
-                    self.XBeeIoOKReceived = True
-                    self.XBeeIoFrameReceived = frame
-                    logging.info(f'............... frame received: %s', frame)
-                    frame = b''
+            try:
+                if self.XBeeSerial.in_waiting >= 1:
+                    # some data available
+                    data: bytes = self.XBeeSerial.read(1)
+                    # logging.debug(data)
+                    frame += data
+                    if 'OK\r' in frame.decode("ascii"):
+                        # received response
+                        self.XBeeIoOKReceived = True
+                        self.XBeeIoFrameReceived = frame
+                        logging.info(f'............... frame received: %s', frame)
+                        frame = b''
+                    elif '\r' in frame.decode("ascii"):
+                        # received response
+                        self.XBeeIoOKReceived = True
+                        self.XBeeIoFrameReceived = frame
+                        logging.info(f'............... frame received: %s', frame)
+                        frame = b''
+                    else:
+                        pass
                 else:
                     pass
-            else:
+            except OSError as e:
                 pass
+            

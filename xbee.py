@@ -1,7 +1,7 @@
 """
 MIT License
 
-Copyright (c) 2023-2024  Helios  helios14_75@hotmail.fr
+Copyright (c) 2023-2026  Helios  philippemario.romano@hotmail.fr
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -287,13 +287,13 @@ class xbee(xbee_io):
         if command == "on":
             self.ApiSem.acquire()
             self.enterCommandMode()
-            self.setDigitalIOLow(channel)
+            self.setDigitalIOHigh(channel)
             self.exitCommandMode()
             self.ApiSem.release()
         else:
             self.ApiSem.acquire()
             self.enterCommandMode()
-            self.setDigitalIOHigh(channel)
+            self.setDigitalIOLow(channel)
             self.exitCommandMode()
             self.ApiSem.release()
         logging.debug("... sending command to XBee, done")
